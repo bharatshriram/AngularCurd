@@ -1,0 +1,82 @@
+<div class="container">
+<form #empForm="ngForm" (ngSubmit)="saveEmployee()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="panel-title">Create Employee Form</h2>
+    </div>
+    <div class="panel-body">
+      <div class="form-group" [class.has-error]="fname.invalid && fname.touched" [class.has-success]="fname.valid && fname.touched">
+              <div class="row">
+        <label class="control-label col-xs-2" for="fullName">fullName</label>
+        <input class="col-xs-8" type="text" id="fullName" name="fullName"  #fname="ngModel" [(ngModel)]="employee.fullName" required>
+     
+      </div>
+      <span class="help-block" *ngIf="fname.invalid && fname.touched">fullName Reqiured</span>
+      </div>
+      <div class="form-group" [class.has-error]="emailpatt.invalid && emailpatt.touched" [class.has-success]="emailpatt.valid && emailpatt.touched">
+              <div class="row">
+        <label class="control-label col-xs-2" for="email">Email</label>
+        <input class="col-xs-8" type="email" id="email" name="Email"  [(ngModel)]="employee.email" #emailpatt="ngModel" required>
+      <span class="help-block" *ngIf="emailpatt.inavlid && emailpatt.touched">Email Mandatory</span>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="control-label col-xs-2">Gender</label>
+          
+          <label class="radio-inline" class="control-label col-xs-2" for="gender">  
+            <input type="radio" name="gender" value="Male" [(ngModel)]="employee.gender">
+         Male</label>
+          <label class="radio-inline" for="gender"> 
+            <input type="radio" name="gender" value="Female" [(ngModel)]="employee.gender"
+          >Female</label>
+        </div>
+      </div>
+      <div class="form-group">
+          <div class="row">
+            <label class="control-label col-xs-2"></label>
+            <label class="checkbox-inline" class="control-label col-xs-2" >  
+              <input type="checkbox" name="isActive" [(ngModel)]="employee.isActive">
+              isActive</label>
+          </div>
+        </div>
+      <div class="form-group">
+          <div class="row">
+     <label class="control-label col-xs-2" for="department"> Department</label>
+                <select class="col-xs-8" id="department" name="department" [(ngModel)]="employee.department">
+                  <option *ngFor="let dept of departments" [value]="dept.id">
+                    {{dept.name}}
+                  </option>
+                  </select>
+         
+            </div>
+          </div>
+          <div class="form-group">
+         
+              <div class="row">
+        <label class="control-label col-xs-2" for="DateOfBirth">Date</label>
+        <input class="col-xs-8" type="text" bsDatepicker id="DateOfBirth" name="DateOfBirth"  [(ngModel)]="employee.DateOfBirth">
+      
+      </div>
+      </div>
+
+      <div class="form-group">  
+          <div class="row">
+    <label class="control-label col-xs-2" for="photoPath">Photo Path</label>
+    <input class="col-xs-8" type="text" id="photoPath" name="photoPath"  [(ngModel)]="employee.photoPath">
+  
+  </div>
+  </div>
+  <div class="form-group">
+    <button type="button" (click)="togglePreviewPhoto()" class="btn btn-info">{{previewPhoto ? "Hide": "Show"}}Preview</button>
+  </div>
+  <div class="form-group">
+    <img [src]="photoPath" height="200" width="200" *ngIf="previewPhoto" />
+  </div>
+      <div class="form-group">
+        <button class="btn btn-info" [disabled]="empForm.invalid">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>

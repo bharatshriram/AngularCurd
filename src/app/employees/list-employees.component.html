@@ -1,0 +1,87 @@
+<div class="container">
+<div class="panel panel-primary" *ngFor="let employee of employees">
+  <div class="panel-heading">
+  <div class="panel-title">{{employee.name}}</div>
+  <div class="panel-body">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-4">
+          <img class="imageclass" [src]="employee.photoPath "/>
+        </div>
+        <div class="col-xs-8">
+          <div class="row vertical-align">
+            <div class="col-xs-6">
+              Id
+            </div>
+            <div class="col-xs-6">
+              :{{employee.id}}
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-xs-6">
+          <div class="row vertical-align">
+            <div class="col-xs-8">
+              Name
+            </div>
+            <div class="col-xs-4">
+              :{{employee.name}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="row vertical-align">
+            <div class="col-xs-6">
+              Gender
+            </div>
+            <div class="col-xs-6">
+              :{{employee.gender}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="row vertical-align">
+            <div class="col-xs-8">
+              Date Of Birth
+            </div>
+            <div class="col-xs-4">
+              :{{employee.dateOfBirth}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="row vertical-align">
+            <div class="col-xs-8">
+              email
+            </div>
+            <div class="col-xs-4">
+              :{{employee.email}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="row vertical-align">
+            <div class="col-xs-6">
+              department
+            </div>
+            <div class="col-xs-6">
+              :{{employee.department}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="row vertical-align">
+            <div class="col-xs-6">
+              Active
+            </div>
+            <div class="col-xs-6">
+              :{{employee.isActive}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,16 @@
+.imageclass{
+    height:200px;
+    width:200px;
+}
+.panel-body{
+    background-color:white;
+    color:black;
+    border:1px solid #337ab7;
+}
+.vertical-align{
+    display:flex;
+    align-items:center;
+}
+.panel-heading{
+    padding: 0px 0px;
+}
